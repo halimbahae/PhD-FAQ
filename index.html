@@ -26,255 +26,486 @@
         .faq-question.active {
             @apply bg-blue-100;
         }
+        /* RTL support for Arabic */
+        .rtl-direction {
+            direction: rtl;
+            text-align: right;
+        }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center py-10 px-4">
     <div class="max-w-4xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
         <!-- Header Section -->
         <header class="bg-blue-600 text-white p-6 text-center rounded-t-xl">
-            <h1 class="text-4xl font-extrabold mb-2">PhD FSR UM5</h1>
-            <p class="text-xl font-light">Frequently Asked Questions</p>
+            <h1 class="text-4xl font-extrabold mb-2" id="main-title">PhD FSR UM5</h1>
+            <p class="text-xl font-light" id="sub-title">Frequently Asked Questions</p>
+            <!-- Language Selector -->
+            <div class="mt-4">
+                <label for="language-select" class="sr-only">Select Language</label>
+                <select id="language-select" class="p-2 rounded-md bg-blue-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
         </header>
 
         <!-- Main Content Area -->
-        <main class="p-8">
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">General Re-enrollment & Derogation</h2>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q1: What is the re-enrollment process for the 2025-2026 academic year?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A1: PhD students regularly enrolled for the 2024-2025 academic year can submit their re-enrollment request online. Your progress reports must be validated by your thesis supervisor and the CEDOC director for re-enrollment authorization.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q2: Are 3rd, 4th, and 5th-year students required to submit a derogation request for re-enrollment?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A2: Yes, students in their 3rd, 4th, and 5th years must submit a derogation request in addition to their re-enrollment application. This request needs to be approved by your thesis supervisor, the CEDOC director, and the head of the doctoral training establishment.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q3: Where can I find the conditions for derogation?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A3: The conditions for derogation are specified in the <strong>Thesis Charter validated by the university council in 2021</strong>.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q4: Is there a specific template for the progress report that needs to be submitted to CEDOC?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A4: As of now, a specific template for the progress report has not been shared. Please inquire with CEDOC for the required elements to include.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q5: Will there be a paper dossier to submit after online re-enrollment?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A5: It is believed that a paper dossier, including photocopies of attestations, certificates, and re-enrollment receipts, will still be required, similar to previous years. Further details will be communicated.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">Training & Required Units</h2>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q6: What are the required training units for PhD students now, and is the 200-hour requirement still applicable?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A6: The focus has shifted from a fixed number of hours (like 200 hours) to the <strong>validation of training units</strong>. You need to attend conferences and training sessions and obtain certificates in the following areas:</p>
-                        <ul class="list-disc list-inside mt-2 ml-4">
-                            <li><strong>Research Methodology</strong></li>
-                            <li><strong>History of Sciences</strong></li>
-                            <li><strong>Artificial Intelligence</strong></li>
-                            <li><strong>Training related to your thesis domain</strong></li>
-                            <li><strong>Training outside your thesis domain</strong></li>
-                            <li><strong>Intellectual Property</strong></li>
-                            <li><strong>Entrepreneurship</strong></li>
-                            <li><strong>Pedagogical Innovation</strong></li>
-                            <li><strong>Rosetta Stone (language training)</strong></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q7: What kind of formations count towards the required units?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A7: Formations already undertaken during <strong>Doctoriales</strong> and other conferences count towards these units.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q8: Can online courses from platforms like Coursera, Udemy, or LinkedIn Learning be counted towards the required training units?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A8: This information is currently being verified. Please stay tuned for an official clarification on which MOOCs are accepted.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q9: Where can I access the Moodle E-learning LMS platform for formations?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A9: The Moodle platform is currently being set up, and formations will be added progressively.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q10: Are the required formations available remotely or in person?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A10: Both distance and in-person formations are acceptable, as long as you obtain a <strong>certificate of participation</strong>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">Rosetta Stone Language Platform</h2>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q11: Who can access the Rosetta Stone platform?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A11: The Rosetta Stone platform is currently available only for <strong>1st and 2nd-year PhD students</strong>.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q12: What is the required volume of hours for Rosetta Stone?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A12: The required volume is <strong>30 hours per year in total</strong>, covering both French and English. It is not 30 hours per language. This information is currently being re-verified for final confirmation.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q13: Why might my Rosetta Stone account be deactivated or inaccessible?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A13: Your account may be deactivated automatically at the end of the academic year. If you encounter issues, please contact <strong>Mr. Zine El Abidine Triqui at z.triqui@um5r.ac.ma</strong>.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q14: How can I access the Rosetta Stone platform?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A14: You can access Rosetta Stone via Moodle:</p>
-                        <ol class="list-decimal list-inside mt-2 ml-4">
-                            <li>Log in to Moodle with your UM5 credentials.</li>
-                            <li>Go to this link: <a href="https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078" target="_blank" class="text-blue-600 hover:underline">https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078</a></li>
-                            <li>Follow the instructions to register or activate your access.</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">Certificates & Institutional Emails</h2>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q15: When will we receive certificates of participation for the Doctoriales?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A15: The certificates are currently being prepared and will be sent out soon.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q16: I haven't received my institutional email. How can I get it activated or updated?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A16: In most cases, issues with institutional emails are due to an incorrect email address provided during registration. Please visit <strong>CEDOC directly</strong> to correct your information.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">Communication & Official Information</h2>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 class="text-lg font-semibold text-gray-800">Q17: Will the administration provide official communication regarding these changes and requirements?</h3>
-                        <span class="text-blue-600 text-xl font-bold">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A17: The need for clear, structured, and official communication (via email or updated charter) has been raised with the administration. We understand the importance of having timely and official information to avoid confusion.</p>
-                    </div>
-                </div>
-            </section>
+        <main class="p-8" id="faq-content">
+            <!-- FAQ content will be dynamically loaded here by JavaScript -->
+            <p class="text-center text-gray-500">Loading FAQ content...</p>
         </main>
 
         <!-- Footer Section -->
         <footer class="bg-blue-600 text-white p-4 text-center rounded-b-xl mt-8">
-            <p class="text-sm">&copy; 2025 FSR UM5 PhD Program. All rights reserved.</p>
+            <p class="text-sm" id="footer-text"></p>
+            <p class="text-sm mt-2">This FAQ is made with love by <a href="https://linkedin.com/in/halimbahae" target="_blank" class="text-blue-200 hover:underline">Bahae Eddine HALIM</a></p>
         </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqQuestions = document.querySelectorAll('.faq-question');
-
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const plusSign = question.querySelector('span');
-
-                    // Toggle visibility of the answer
-                    if (answer.style.display === 'block') {
-                        answer.style.display = 'none';
-                        question.classList.remove('active');
-                        plusSign.textContent = '+';
-                    } else {
-                        // Close all other open answers
-                        document.querySelectorAll('.faq-answer').forEach(openAnswer => {
-                            if (openAnswer !== answer) {
-                                openAnswer.style.display = 'none';
-                                openAnswer.previousElementSibling.classList.remove('active');
-                                openAnswer.previousElementSibling.querySelector('span').textContent = '+';
+        // FAQ content in multiple languages
+        const faqData = {
+            en: {
+                mainTitle: "PhD FSR UM5",
+                subTitle: "Frequently Asked Questions",
+                footerText: "", // Removed as per user's clarification
+                sections: [
+                    {
+                        title: "General Re-enrollment & Derogation",
+                        items: [
+                            {
+                                question: "Q1: What is the re-enrollment process for the 2025-2026 academic year?",
+                                answer: "A1: PhD students regularly enrolled for the 2024-2025 academic year can submit their re-enrollment request online. Your progress reports must be validated by your thesis supervisor and the CEDOC director for re-enrollment authorization."
+                            },
+                            {
+                                question: "Q2: Are 3rd, 4th, and 5th-year students required to submit a derogation request for re-enrollment?",
+                                answer: "A2: Yes, students in their 3rd, 4th, and 5th years must submit a derogation request in addition to their re-enrollment application. This request needs to be approved by your thesis supervisor, the CEDOC director, and the head of the doctoral training establishment."
+                            },
+                            {
+                                question: "Q3: Where can I find the conditions for derogation?",
+                                answer: "A3: The conditions for derogation are specified in the <strong>Thesis Charter validated by the university council in 2021</strong>."
+                            },
+                            {
+                                question: "Q4: Is there a specific template for the progress report that needs to be submitted to CEDOC?",
+                                answer: "A4: As of now, a specific template for the progress report has not been shared. Please inquire with CEDOC for the required elements to include."
+                            },
+                            {
+                                question: "Q5: Will there be a paper dossier to submit after online re-enrollment?",
+                                answer: "A5: It is believed that a paper dossier, including photocopies of attestations, certificates, and re-enrollment receipts, will still be required, similar to previous years. Further details will be communicated."
                             }
-                        });
-                        // Open the clicked answer
-                        answer.style.display = 'block';
-                        question.classList.add('active');
-                        plusSign.textContent = '-';
+                        ]
+                    },
+                    {
+                        title: "Training & Required Units",
+                        items: [
+                            {
+                                question: "Q6: What are the required training units for PhD students now, and is the 200-hour requirement still applicable?",
+                                answer: `A6: The focus has shifted from a fixed number of hours (like 200 hours) to the <strong>validation of training units</strong>. You need to attend conferences and training sessions and obtain certificates in the following areas:
+                                    <ul class="list-disc list-inside mt-2 ml-4">
+                                        <li><strong>Research Methodology</strong></li>
+                                        <li><strong>History of Sciences</strong></li>
+                                        <li><strong>Artificial Intelligence</strong></li>
+                                        <li><strong>Training related to your thesis domain</strong></li>
+                                        <li><strong>Training outside your thesis domain</strong></li>
+                                        <li><strong>Intellectual Property</strong></li>
+                                        <li><strong>Entrepreneurship</strong></li>
+                                        <li><strong>Pedagogical Innovation</strong></li>
+                                        <li><strong>Rosetta Stone (language training)</strong></li>
+                                    </ul>`
+                            },
+                            {
+                                question: "Q7: What kind of formations count towards the required units?",
+                                answer: "A7: Formations already undertaken during <strong>Doctoriales</strong> and other conferences count towards these units."
+                            },
+                            {
+                                question: "Q8: Can online courses from platforms like Coursera, Udemy, or LinkedIn Learning be counted towards the required training units?",
+                                answer: "A8: This information is currently being verified. Please stay tuned for an official clarification on which MOOCs are accepted."
+                            },
+                            {
+                                question: "Q9: Where can I access the Moodle E-learning LMS platform for formations?",
+                                answer: "A9: The Moodle platform is currently being set up, and formations will be added progressively."
+                            },
+                            {
+                                question: "Q10: Are the required formations available remotely or in person?",
+                                answer: "A10: Both distance and in-person formations are acceptable, as long as you obtain a <strong>certificate of participation</strong>."
+                            }
+                        ]
+                    },
+                    {
+                        title: "Rosetta Stone Language Platform",
+                        items: [
+                            {
+                                question: "Q11: Who can access the Rosetta Stone platform?",
+                                answer: "A11: The Rosetta Stone platform is currently available only for <strong>1st and 2nd-year PhD students</strong>."
+                            },
+                            {
+                                question: "Q12: What is the required volume of hours for Rosetta Stone?",
+                                answer: "A12: The required volume is <strong>30 hours per year in total</strong>, covering both French and English. It is not 30 hours per language. This information is currently being re-verified for final confirmation."
+                            },
+                            {
+                                question: "Q13: Why might my Rosetta Stone account be deactivated or inaccessible?",
+                                answer: "A13: Your account may be deactivated automatically at the end of the academic year. If you encounter issues, please contact <strong>Mr. Zine El Abidine Triqui at z.triqui@um5r.ac.ma</strong>."
+                            },
+                            {
+                                question: "Q14: How can I access the Rosetta Stone platform?",
+                                answer: `A14: You can access Rosetta Stone via Moodle:
+                                    <ol class="list-decimal list-inside mt-2 ml-4">
+                                        <li>Log in to Moodle with your UM5 credentials.</li>
+                                        <li>Go to this link: <a href="https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078" target="_blank" class="text-blue-600 hover:underline">https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078</a></li>
+                                        <li>Follow the instructions to register or activate your access.</li>
+                                    </ol>`
+                            }
+                        ]
+                    },
+                    {
+                        title: "Certificates & Institutional Emails",
+                        items: [
+                            {
+                                question: "Q15: When will we receive certificates of participation for the Doctoriales?",
+                                answer: "A15: The certificates are currently being prepared and will be sent out soon."
+                            },
+                            {
+                                question: "Q16: I haven't received my institutional email. How can I get it activated or updated?",
+                                answer: "A16: In most cases, issues with institutional emails are due to an incorrect email address provided during registration. Please visit <strong>CEDOC directly</strong> to correct your information."
+                            }
+                        ]
+                    },
+                    {
+                        title: "Communication & Official Information",
+                        items: [
+                            {
+                                question: "Q17: Will the administration provide official communication regarding these changes and requirements?",
+                                answer: "A17: The need for clear, structured, and official communication (via email or updated charter) has been raised with the administration. We understand the importance of having timely and official information to avoid confusion."
+                            }
+                        ]
+                    }
+                ]
+            },
+            fr: {
+                mainTitle: "PhD FSR UM5",
+                subTitle: "Foire Aux Questions",
+                footerText: "", // Removed as per user's clarification
+                sections: [
+                    {
+                        title: "Réinscription Générale & Dérogation",
+                        items: [
+                            {
+                                question: "Q1: Quel est le processus de réinscription pour l'année universitaire 2025-2026 ?",
+                                answer: "A1: Les doctorants de l'année universitaire 2024-2025 peuvent soumettre leur demande de réinscription en ligne. Leurs rapports d'état d'avancement doivent être validés par leur directeur de thèse et le directeur du CEDOC pour l'autorisation de réinscription."
+                            },
+                            {
+                                question: "Q2: Les étudiants de 3ème, 4ème et 5ème année doivent-ils soumettre une demande de dérogation pour la réinscription ?",
+                                answer: "A2: Oui, les étudiants de 3ème, 4ème et 5ème année doivent soumettre une demande de dérogation en plus de leur demande de réinscription. Cette demande doit être approuvée par leur directeur de thèse, le directeur du CEDOC et le chef d'établissement d'accueil de la formation doctorale."
+                            },
+                            {
+                                question: "Q3: Où puis-je trouver les conditions de dérogation ?",
+                                answer: "A3: Les conditions de dérogation sont précisées dans la <strong>Charte des Thèses validée par le conseil de l'université en 2021</strong>."
+                            },
+                            {
+                                question: "Q4: Existe-t-il un modèle spécifique pour le rapport d'état d'avancement à soumettre au CEDOC ?",
+                                answer: "A4: Pour le moment, aucun modèle spécifique de rapport d'état d'avancement n'a été partagé. Veuillez vous renseigner auprès du CEDOC pour connaître les éléments à inclure."
+                            },
+                            {
+                                question: "Q5: Y aura-t-il un dossier papier à déposer après la réinscription en ligne ?",
+                                answer: "A5: On estime qu'un dossier papier, comprenant les photocopies des attestations, certificats et reçus de réinscription, sera toujours requis, comme les années précédentes. Des détails supplémentaires seront communiqués."
+                            }
+                        ]
+                    },
+                    {
+                        title: "Formations & Unités Requises",
+                        items: [
+                            {
+                                question: "Q6: Quelles sont les unités de formation requises pour les doctorants maintenant, et l'exigence des 200 heures est-elle toujours applicable ?",
+                                answer: `A6: L'accent a été mis sur la <strong>validation des unités de formation</strong> plutôt que sur un nombre fixe d'heures (comme 200 heures). Vous devez assister à des conférences et des formations et obtenir des certificats dans les domaines suivants :
+                                    <ul class="list-disc list-inside mt-2 ml-4">
+                                        <li><strong>Méthodologie de la recherche</strong></li>
+                                        <li><strong>Histoire des sciences</strong></li>
+                                        <li><strong>Intelligence artificielle</strong></li>
+                                        <li><strong>Formations en lien avec votre domaine de thèse</strong></li>
+                                        <li><strong>Formations hors domaine de la thèse</strong></li>
+                                        <li><strong>Propriété intellectuelle</strong></li>
+                                        <li><strong>Entrepreneuriat</strong></li>
+                                        <li><strong>Innovation pédagogique</strong></li>
+                                        <li><strong>Rosetta Stone (formation linguistique)</strong></li>
+                                    </ul>`
+                            },
+                            {
+                                question: "Q7: Quels types de formations sont pris en compte pour les unités requises ?",
+                                answer: "A7: Les formations déjà suivies lors des <strong>Doctoriales</strong> et d'autres conférences sont prises en compte pour ces unités."
+                            },
+                            {
+                                question: "Q8: Les cours en ligne de plateformes comme Coursera, Udemy ou LinkedIn Learning peuvent-ils être comptabilisés pour les unités de formation requises ?",
+                                answer: "A8: Cette information est en cours de vérification. Veuillez rester informé pour une clarification officielle sur les MOOCs acceptés."
+                            },
+                            {
+                                question: "Q9: Où puis-je accéder à la plateforme Moodle E-learning LMS pour les formations ?",
+                                answer: "A9: La plateforme Moodle est en cours de mise en place et les formations seront ajoutées progressivement."
+                            },
+                            {
+                                question: "Q10: Les formations requises sont-elles disponibles à distance ou en présentiel ?",
+                                answer: "A10: Les formations à distance et en présentiel sont toutes deux acceptables, à condition d'obtenir une <strong>attestation de participation</strong>."
+                            }
+                        ]
+                    },
+                    {
+                        title: "Plateforme Linguistique Rosetta Stone",
+                        items: [
+                            {
+                                question: "Q11: Qui peut accéder à la plateforme Rosetta Stone ?",
+                                answer: "A11: La plateforme Rosetta Stone est actuellement disponible uniquement pour les doctorants de <strong>1ère et 2ème année</strong>."
+                            },
+                            {
+                                question: "Q12: Quel est le volume horaire requis pour Rosetta Stone ?",
+                                answer: "A12: Le volume requis est de <strong>30 heures par an au total</strong>, couvrant à la fois le français et l'anglais. Ce n'est pas 30 heures par langue. Cette information est en cours de nouvelle vérification pour confirmation finale."
+                            },
+                            {
+                                question: "Q13: Pourquoi mon compte Rosetta Stone pourrait-il être désactivé ou inaccessible ?",
+                                answer: "A13: Votre compte peut être désactivé automatiquement à la fin de l'année universitaire. Si vous rencontrez des problèmes, veuillez contacter <strong>M. Zine El Abidine Triqui à z.triqui@um5r.ac.ma</strong>."
+                            },
+                            {
+                                question: "Q14: Comment puis-je accéder à la plateforme Rosetta Stone ?",
+                                answer: `A14: Vous pouvez accéder à Rosetta Stone via Moodle :
+                                    <ol class="list-decimal list-inside mt-2 ml-4">
+                                        <li>Connectez-vous à Moodle avec vos identifiants UM5.</li>
+                                        <li>Accédez à ce lien : <a href="https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078" target="_blank" class="text-blue-600 hover:underline">https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078</a></li>
+                                        <li>Suivez les instructions pour vous inscrire ou activer votre accès.</li>
+                                    </ol>`
+                            }
+                        ]
+                    },
+                    {
+                        title: "Certificats & Emails Institutionnels",
+                        items: [
+                            {
+                                question: "Q15: Quand recevrons-nous les certificats de participation aux Doctoriales ?",
+                                answer: "A15: Les certificats sont en cours de préparation et seront envoyés prochainement."
+                            },
+                            {
+                                question: "Q16: Je n'ai pas reçu mon email institutionnel. Comment puis-can I get it activated or updated?",
+                                answer: "A16: Dans la plupart des cas, les problèmes d'emails institutionnels sont dus à une adresse email incorrecte fournie lors de l'inscription. Veuillez vous rendre directement au <strong>CEDOC</strong> pour corriger vos informations."
+                            }
+                        ]
+                    },
+                    {
+                        title: "Communication & Informations Officielles",
+                        items: [
+                            {
+                                question: "Q17: L'administration fournira-t-elle une communication officielle concernant ces changements et exigences ?",
+                                answer: "A17: Le besoin d'une communication claire, structurée et officielle (par email ou charte mise à jour) a été soulevé auprès de l'administration. Nous comprenons l'importance de disposer d'informations opportunes et officielles pour éviter toute confusion."
+                            }
+                        ]
+                    }
+                ]
+            },
+            ar: {
+                mainTitle: "دكتوراه FSR UM5",
+                subTitle: "الأسئلة المتكررة",
+                footerText: "", // Removed as per user's clarification
+                sections: [
+                    {
+                        title: "إعادة التسجيل العام والاستثناءات",
+                        items: [
+                            {
+                                question: "س1: ما هي عملية إعادة التسجيل للسنة الجامعية 2025-2026؟",
+                                answer: "ج1: يمكن لطلاب الدكتوراه المسجلين بانتظام للسنة الجامعية 2024-2025 تقديم طلب إعادة التسجيل عبر الإنترنت. يجب أن يتم التحقق من تقارير التقدم الخاصة بك من قبل مشرف الأطروحة ومدير مركز دراسات الدكتوراه (CEDOC) للحصول على إذن إعادة التسجيل."
+                            },
+                            {
+                                question: "س2: هل يتعين على طلاب السنة الثالثة والرابعة والخامسة تقديم طلب استثناء لإعادة التسجيل؟",
+                                answer: "ج2: نعم، يجب على طلاب السنة الثالثة والرابعة والخامسة تقديم طلب استثناء بالإضافة إلى طلب إعادة التسجيل. يجب أن يوافق على هذا الطلب مشرف الأطروحة ومدير مركز دراسات الدكتوراه (CEDOC) ورئيس المؤسسة المضيفة للتكوين الدكتوراه."
+                            },
+                            {
+                                question: "س3: أين يمكنني العثور على شروط الاستثناء؟",
+                                answer: "ج3: تم تحديد شروط الاستثناء في <strong>ميثاق الأطروحات الذي صادق عليه مجلس الجامعة عام 2021</strong>."
+                            },
+                            {
+                                question: "س4: هل يوجد نموذج محدد لتقرير التقدم الذي يجب تقديمه إلى مركز دراسات الدكتوراه (CEDOC)؟",
+                                answer: "ج4: حتى الآن، لم يتم مشاركة نموذج محدد لتقرير التقدم. يرجى الاستفسار من مركز دراسات الدكتوراه (CEDOC) عن العناصر المطلوبة التي يجب تضمينها."
+                            },
+                            {
+                                question: "س5: هل سيكون هناك ملف ورقي لتقديمه بعد إعادة التسجيل عبر الإنترنت؟",
+                                answer: "ج5: يُعتقد أنه سيظل مطلوبًا تقديم ملف ورقي، بما في ذلك نسخ من الشهادات والإيصالات الخاصة بإعادة التسجيل، على غرار السنوات السابقة. سيتم الإعلان عن تفاصيل إضافية."
+                            }
+                        ]
+                    },
+                    {
+                        title: "التكوين والوحدات المطلوبة",
+                        items: [
+                            {
+                                question: "س6: ما هي وحدات التكوين المطلوبة لطلاب الدكتوراه الآن، وهل لا يزال شرط 200 ساعة ساري المفعول؟",
+                                answer: `ج6: لقد تحول التركيز من عدد ساعات ثابت (مثل 200 ساعة) إلى <strong>التحقق من وحدات التكوين</strong>. يجب عليك حضور المؤتمرات والدورات التدريبية والحصول على شهادات في المجالات التالية:
+                                    <ul class="list-disc list-inside mt-2 ml-4">
+                                        <li><strong>منهجية البحث</strong></li>
+                                        <li><strong>تاريخ العلوم</strong></li>
+                                        <li><strong>الذكاء الاصطناعي</strong></li>
+                                        <li><strong>التكوين المتعلق بمجال أطروحتك</strong></li>
+                                        <li><strong>التكوين خارج مجال الأطروحة</strong></li>
+                                        <li><strong>الملكية الفكرية</strong></li>
+                                        <li><strong>ريادة الأعمال</strong></li>
+                                        <li><strong>الابتكار التربوي</strong></li>
+                                        <li><strong>روزيتا ستون (التكوين اللغوي)</strong></li>
+                                    </ul>`
+                            },
+                            {
+                                question: "س7: ما هي أنواع التكوينات التي تُحتسب ضمن الوحدات المطلوبة؟",
+                                answer: "ج7: التكوينات التي تم القيام بها بالفعل خلال <strong>الدكتوراه</strong> والمؤتمرات الأخرى تُحتسب ضمن هذه الوحدات."
+                            },
+                            {
+                                question: "س8: هل يمكن احتساب الدورات التدريبية عبر الإنترنت من منصات مثل Coursera أو Udemy أو LinkedIn Learning ضمن وحدات التكوين المطلوبة؟",
+                                answer: "ج8: يتم التحقق من هذه المعلومات حاليًا. يرجى متابعة الإعلانات الرسمية لتوضيح MOOCs المقبولة."
+                            },
+                            {
+                                question: "س9: أين يمكنني الوصول إلى منصة Moodle E-learning LMS للتكوينات؟",
+                                answer: "ج9: يجري حاليًا إعداد منصة Moodle، وستتم إضافة التكوينات تدريجيًا."
+                            },
+                            {
+                                question: "س10: هل التكوينات المطلوبة متاحة عن بعد أم حضوريًا؟",
+                                answer: "ج10: التكوينات عن بعد والحضورية مقبولة، طالما أنك تحصل على <strong>شهادة مشاركة</strong>."
+                            }
+                        ]
+                    },
+                    {
+                        title: "منصة روزيتا ستون للغات",
+                        items: [
+                            {
+                                question: "س11: من يمكنه الوصول إلى منصة روزيتا ستون؟",
+                                answer: "ج11: منصة روزيتا ستون متاحة حاليًا فقط لطلاب الدكتوراه في <strong>السنة الأولى والثانية</strong>."
+                            },
+                            {
+                                question: "س12: ما هو الحجم المطلوب من الساعات لروزيتا ستون؟",
+                                answer: "ج12: الحجم المطلوب هو <strong>30 ساعة في السنة إجمالاً</strong>، تغطي اللغتين الفرنسية والإنجليزية. ليست 30 ساعة لكل لغة. يتم حاليًا إعادة التحقق من هذه المعلومات للتأكيد النهائي."
+                            },
+                            {
+                                question: "س13: لماذا قد يتم إلغاء تنشيط حسابي في روزيتا ستون أو يصبح غير متاح؟",
+                                answer: "ج13: قد يتم إلغاء تنشيط حسابك تلقائيًا في نهاية العام الجامعي. إذا واجهت مشكلات، يرجى الاتصال بـ <strong>السيد زين العابدين تريكي على z.triqui@um5r.ac.ma</strong>."
+                            },
+                            {
+                                question: "س14: كيف يمكنني الوصول إلى منصة روزيتا ستون؟",
+                                answer: `ج14: يمكنك الوصول إلى روزيتا ستون عبر مودل:
+                                    <ol class="list-decimal list-inside mt-2 ml-4">
+                                        <li>سجل الدخول إلى مودل باستخدام بيانات اعتماد جامعة محمد الخامس.</li>
+                                        <li>انتقل إلى هذا الرابط: <a href="https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078" target="_blank" class="text-blue-600 hover:underline">https://moodle-fsr.um5.ac.ma/course/index.php?categoryid=4078</a></li>
+                                        <li>اتبع التعليمات للتسجيل أو تفعيل وصولك.</li>
+                                    </ol>`
+                            }
+                        ]
+                    },
+                    {
+                        title: "الشهادات ورسائل البريد الإلكتروني المؤسسية",
+                        items: [
+                            {
+                                question: "س15: متى سنتلقى شهادات المشاركة في الدكتوراه؟",
+                                answer: "ج15: يجري حاليًا إعداد الشهادات وسيتم إرسالها قريبًا."
+                            },
+                            {
+                                question: "س16: لم أتلق بريدي الإلكتروني المؤسسي. كيف يمكنني تفعيله أو تحديثه؟",
+                                answer: "ج16: في معظم الحالات، تعود مشكلات البريد الإلكتروني المؤسسي إلى عنوان بريد إلكتروني غير صحيح تم تقديمه أثناء التسجيل. يرجى زيارة <strong>مركز دراسات الدكتوراه (CEDOC) مباشرة</strong> لتصحيح معلوماتك."
+                            }
+                        ]
+                    },
+                    {
+                        title: "الاتصال والمعلومات الرسمية",
+                        items: [
+                            {
+                                question: "س17: هل ستقدم الإدارة بلاغًا رسميًا بخصوص هذه التغييرات والمتطلبات؟",
+                                answer: "ج17: تم طرح الحاجة إلى تواصل واضح ومنظم ورسمي (عبر البريد الإلكتروني أو ميثاق محدث) مع الإدارة. نحن ندرك أهمية الحصول على معلومات في الوقت المناسب ورسمية لتجنب الارتباك."
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // Function to render FAQ content based on language
+        function renderFaq(lang) {
+            const content = faqData[lang];
+            const faqContentDiv = document.getElementById('faq-content');
+            faqContentDiv.innerHTML = ''; // Clear previous content
+
+            // Update header and footer text
+            document.getElementById('main-title').textContent = content.mainTitle;
+            document.getElementById('sub-title').textContent = content.subTitle;
+            document.getElementById('footer-text').innerHTML = content.footerText; // Use innerHTML for copyright symbol
+
+            // Set text direction for Arabic
+            if (lang === 'ar') {
+                document.body.classList.add('rtl-direction');
+            } else {
+                document.body.classList.remove('rtl-direction');
+            }
+
+            content.sections.forEach(section => {
+                const sectionHtml = document.createElement('section');
+                sectionHtml.classList.add('mb-8');
+                sectionHtml.innerHTML = `
+                    <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">${section.title}</h2>
+                `;
+                section.items.forEach(item => {
+                    const faqItemDiv = document.createElement('div');
+                    faqItemDiv.classList.add('faq-item');
+                    faqItemDiv.innerHTML = `
+                        <div class="faq-question">
+                            <h3 class="text-lg font-semibold text-gray-800">${item.question}</h3>
+                            <span class="text-blue-600 text-xl font-bold">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>${item.answer}</p>
+                        </div>
+                    `;
+                    sectionHtml.appendChild(faqItemDiv);
+                });
+                faqContentDiv.appendChild(sectionHtml);
+            });
+
+            // Re-attach event listeners for newly rendered FAQ items
+            attachFaqEventListeners();
+        }
+
+        // Function to attach click listeners to FAQ questions
+        function attachFaqEventListeners() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.removeEventListener('click', toggleFaqAnswer); // Remove existing to prevent duplicates
+                question.addEventListener('click', toggleFaqAnswer);
+            });
+        }
+
+        // Event handler for toggling FAQ answers
+        function toggleFaqAnswer(event) {
+            const question = event.currentTarget;
+            const answer = question.nextElementSibling;
+            const plusSign = question.querySelector('span');
+
+            // Toggle visibility of the answer
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                question.classList.remove('active');
+                plusSign.textContent = '+';
+            } else {
+                // Close all other open answers
+                document.querySelectorAll('.faq-answer').forEach(openAnswer => {
+                    if (openAnswer !== answer) {
+                        openAnswer.style.display = 'none';
+                        openAnswer.previousElementSibling.classList.remove('active');
+                        openAnswer.previousElementSibling.querySelector('span').textContent = '+';
                     }
                 });
+                // Open the clicked answer
+                answer.style.display = 'block';
+                question.classList.add('active');
+                plusSign.textContent = '-';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageSelect = document.getElementById('language-select');
+
+            // Set default language to English and render
+            renderFaq('en');
+
+            // Add event listener for language change
+            languageSelect.addEventListener('change', (event) => {
+                renderFaq(event.target.value);
             });
         });
     </script>
