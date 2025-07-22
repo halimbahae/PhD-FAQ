@@ -10,39 +10,46 @@
         /* Custom font for a clean look */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light blue-gray background */
+            background-color: #e2e8f0; /* Lighter blue-gray background for more airiness */
         }
         /* Style for FAQ question */
         .faq-question {
             cursor: pointer;
-            @apply flex justify-between items-center p-4 bg-white rounded-lg shadow-md mb-2 transition-all duration-300 ease-in-out;
+            @apply flex justify-between items-center p-5 bg-white rounded-xl shadow-lg mb-3 transition-all duration-300 ease-in-out border border-transparent hover:border-blue-300; /* Increased padding, rounded corners, shadow, and hover effect */
         }
         /* Style for FAQ answer */
         .faq-answer {
-            @apply p-4 bg-blue-50 text-gray-700 rounded-b-lg mb-4;
+            @apply p-5 bg-blue-50 text-gray-700 rounded-b-xl mb-4 shadow-inner; /* Increased padding, rounded corners, inner shadow */
             display: none; /* Hidden by default */
+            animation: fadeIn 0.3s ease-out; /* Fade-in animation for answers */
         }
         /* Active state for question */
         .faq-question.active {
-            @apply bg-blue-100;
+            @apply bg-blue-100 border-blue-400; /* Stronger active background and border */
         }
         /* RTL support for Arabic */
         .rtl-direction {
             direction: rtl;
             text-align: right;
         }
+
+        /* Keyframe for fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center py-10 px-4">
-    <div class="max-w-4xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-6"> <!-- Increased padding -->
+    <div class="max-w-5xl w-full bg-white rounded-2xl shadow-3xl overflow-hidden"> <!-- Increased max-width, more rounded, stronger shadow -->
         <!-- Header Section -->
-        <header class="bg-blue-600 text-white p-6 text-center rounded-t-xl">
-            <h1 class="text-4xl font-extrabold mb-2" id="main-title">PhD FSR UM5</h1>
-            <p class="text-xl font-light" id="sub-title">Frequently Asked Questions</p>
+        <header class="bg-blue-700 text-white p-8 text-center rounded-t-2xl"> <!-- Darker blue, increased padding -->
+            <h1 class="text-5xl font-extrabold mb-3 tracking-wide" id="main-title">PhD FSR UM5</h1> <!-- Larger text, more tracking -->
+            <p class="text-2xl font-light opacity-90" id="sub-title">Frequently Asked Questions</p> <!-- Larger text, slight opacity -->
             <!-- Language Selector -->
-            <div class="mt-4">
+            <div class="mt-6"> <!-- Increased margin -->
                 <label for="language-select" class="sr-only">Select Language</label>
-                <select id="language-select" class="p-2 rounded-md bg-blue-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select id="language-select" class="p-3 rounded-lg bg-blue-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-300 cursor-pointer transition-colors duration-200"> <!-- Increased padding, more rounded, stronger focus ring, transition -->
                     <option value="en">English</option>
                     <option value="fr">Français</option>
                     <option value="ar">العربية</option>
@@ -51,17 +58,20 @@
         </header>
 
         <!-- Main Content Area -->
-        <main class="p-8" id="faq-content">
+        <main class="p-10" id="faq-content"> <!-- Increased padding -->
             <!-- FAQ content will be dynamically loaded here by JavaScript -->
             <p class="text-center text-gray-500">Loading FAQ content...</p>
         </main>
 
         <!-- Footer Section -->
-        <footer class="bg-blue-600 text-white p-4 text-center rounded-b-xl mt-8">
+        <footer class="bg-blue-700 text-white p-6 text-center rounded-b-2xl mt-8"> <!-- Darker blue, increased padding -->
             <p class="text-sm" id="footer-text"></p>
-            <p class="text-sm mt-2">This FAQ is made with love by <a href="https://linkedin.com/in/halimbahae" target="_blank" class="text-blue-200 hover:underline">Bahae Eddine HALIM</a></p>
+            <p class="text-sm mt-3">This FAQ is made with love by <a href="https://linkedin.com/in/halimbahae" target="_blank" class="text-blue-200 hover:underline font-medium">Bahae Eddine HALIM</a></p> <!-- Increased margin, added font-medium -->
         </footer>
     </div>
+
+    <!-- Confetti JS CDN - Removed as it was causing errors -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script> -->
 
     <script>
         // FAQ content in multiple languages
@@ -69,7 +79,6 @@
             en: {
                 mainTitle: "PhD FSR UM5",
                 subTitle: "Frequently Asked Questions",
-                footerText: "", // Removed as per user's clarification
                 sections: [
                     {
                         title: "General Re-enrollment & Derogation",
@@ -243,7 +252,6 @@
             fr: {
                 mainTitle: "PhD FSR UM5",
                 subTitle: "Foire Aux Questions",
-                footerText: "", // Removed as per user's clarification
                 sections: [
                     {
                         title: "Réinscription Générale & Dérogation",
@@ -390,15 +398,15 @@
                         title: "Certificats & Emails Institutionnels",
                         items: [
                             {
-                                question: "Q15: Quand recevrons-nous les certificats de participation aux Doctoriales ?",
+                                question: "Q15: Quand recevrons-nous les certificats de participation aux Doctoriales?",
                                 answer: "A15: Les certificats sont en cours de préparation et seront envoyés prochainement."
                             },
                             {
-                                question: "Q16: Je n'ai pas reçu mon email institutionnel. Comment puis-je l'activer ou le mettre à jour ?",
+                                question: "Q16: Je n'ai pas reçu mon email institutionnel. Comment puis-je l'activer ou le mettre à jour?",
                                 answer: "A16: Dans la plupart des cas, les problèmes d'emails institutionnels sont dus à une adresse email incorrecte fournie lors de l'inscription. Veuillez vous rendre directement au <strong>CEDOC</strong> pour corriger vos informations."
                             },
                             {
-                                question: "Q24: Que faire si je ne reçois pas d'e-mails ?",
+                                question: "Q24: Que faire si je ne reçois pas d'e-mails?",
                                 answer: "A24: Si vous ne recevez pas les e-mails : Vérifiez si votre boîte mail est pleine et libérez de l’espace si nécessaire. Ou : Vérifiez si l’adresse e-mail fournie est correcte. En cas d’erreur, veuillez la corriger auprès du CEDOC."
                             }
                         ]
@@ -407,7 +415,7 @@
                         title: "Communication & Informations Officielles",
                         items: [
                             {
-                                question: "Q17: L'administration fournira-t-elle une communication officielle concernant ces changements et exigences ?",
+                                question: "Q17: L'administration fournira-t-elle une communication officielle concernant ces changements et exigences?",
                                 answer: "A17: Le besoin d'une communication claire, structurée et officielle (par email ou charte mise à jour) a été soulevé auprès de l'administration. Nous comprenons l'importance de disposer d'informations opportunes et officielles pour éviter toute confusion."
                             }
                         ]
@@ -417,7 +425,6 @@
             ar: {
                 mainTitle: "دكتوراه FSR UM5",
                 subTitle: "الأسئلة المتكررة",
-                footerText: "", // Removed as per user's clarification
                 sections: [
                     {
                         title: "إعادة التسجيل العام والاستثناءات",
@@ -582,7 +589,7 @@
                         items: [
                             {
                                 question: "س17: هل ستقدم الإدارة بلاغًا رسميًا بخصوص هذه التغييرات والمتطلبات؟",
-                                answer: "ج17: تم طرح الحاجة إلى تواصل واضح ومنظم ورسمي (عبر البريد الإلكتروني أو ميثاق محدث) مع الإدارة. نحن ندرك أهمية الحصول على معلومات في الوقت المناسب ورسمية لتجنب الارتباك."
+                                answer: "ج17: تم طرح الحاجة إلى تواصل واضح ومنظم ورسمي (عبر البريد الإلكتروني أو ميثاق محدث) مع الإدارة. نحن ندرك أهمية الحصول على معلومات في الوقت المناps et officielles pour éviter toute confusion."
                             }
                         ]
                     }
@@ -599,8 +606,6 @@
             // Update header and footer text
             document.getElementById('main-title').textContent = content.mainTitle;
             document.getElementById('sub-title').textContent = content.subTitle;
-            // The footer text for copyright is now fixed in HTML, not dynamic per language
-            // document.getElementById('footer-text').innerHTML = content.footerText;
 
             // Set text direction for Arabic
             if (lang === 'ar') {
@@ -613,14 +618,14 @@
                 const sectionHtml = document.createElement('section');
                 sectionHtml.classList.add('mb-8');
                 sectionHtml.innerHTML = `
-                    <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">${section.title}</h2>
+                    <h2 class="text-2xl font-bold text-black mb-4 border-b-2 border-blue-300 pb-2">${section.title}</h2>
                 `;
                 section.items.forEach(item => {
                     const faqItemDiv = document.createElement('div');
                     faqItemDiv.classList.add('faq-item');
                     faqItemDiv.innerHTML = `
                         <div class="faq-question">
-                            <h3 class="text-lg font-semibold text-gray-800">${item.question}</h3>
+                            <h3 class="text-lg font-semibold text-blue-800">${item.question}</h3> <!-- Questions are now blue -->
                             <span class="text-blue-600 text-xl font-bold">+</span>
                         </div>
                         <div class="faq-answer">
@@ -657,7 +662,7 @@
                 question.classList.remove('active');
                 plusSign.textContent = '+';
             } else {
-                // Open the clicked answer
+                // No longer closing other answers - keep them open
                 answer.style.display = 'block';
                 question.classList.add('active');
                 plusSign.textContent = '-';
